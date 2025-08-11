@@ -47,13 +47,13 @@ describe('Automated tests', ()=>{
     })
 
     it('TC 4.9 - Text field “Last name” rejects invalid symbols – special characters', ()=> {
-        Form.typeInLastName('John!');
+        Form.typeInLastName('Cena!');
         Form.checkLastNameRejectedSpecials();
-        Form.typeInLastName('John@');
+        Form.typeInLastName('Cena@');
         Form.checkLastNameRejectedSpecials();
-        Form.typeInLastName('John(');
+        Form.typeInLastName('Cena(');
         Form.checkLastNameRejectedSpecials();
-        Form.typeInLastName('John€');
+        Form.typeInLastName('Cena€');
         Form.checkLastNameRejectedSpecials();
     })
 
@@ -130,8 +130,6 @@ describe('Automated tests', ()=>{
         Form.checkDialCodeNumber('+223');
         Form.pickCountry('Turkey');
         Form.checkDialCodeNumber('+90');
-
-
     })
 
     it.only('TC 4.2 - Form can be submitted with valid data', () => {
@@ -151,8 +149,6 @@ describe('Automated tests', ()=>{
         Form.checkPasswordAccepted();
         Form.tickTermsCheckbox();
         Form.pressButtonSubmit();
-        // add step - validate that the form was successfully submitted - missing documentation, present Bug 2.7 doesn't allow to check submitted Form
+        // missing step - validation that the form was successfully submitted - reason: missing documentation, present Bug 2.7 doesn't allow to check submitted Form
     })
-
-
 })
